@@ -23,6 +23,7 @@ class UniversityPreference(models.Model):
     user = models.ForeignKey('users.User', verbose_name='사용자', on_delete=models.CASCADE)
     created_at = models.DateTimeField('생성일시', auto_now_add=True)
     deleted_at = models.DateTimeField('삭제일시', auto_now=True)
+    is_active = models.BooleanField('활성화', default=True)
     
     def __str__(self):
         return f'{self.user}님이 선호하는 {self.university}'
