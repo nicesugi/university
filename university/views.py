@@ -1,11 +1,49 @@
+import requests, json
 from django.db.models import Q
+from random import randrange
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from university.models import University, UniversityPreference
+from university.models import (
+    Country, University, UniversityPreference
+    )
+from users.models import User
 from university.serializers import UniversitySerializer
 
 
+class TaskView(APIView):
+    """
+    웹 페이지에서 제공하는 Json Data를 토대로 데이터 삽입
+    """
+    def get(self, request):
+        url = requests.get('http://universities.hipolabs.com/search')
+        text = url.text
+        data = json.loads(text)
+        country_name_list = []
+        country_code_list = []
+        
+        for univercity_data in data:
+            if univercity_data['country'] not in country_name_list:
+                country_name_list.append(univercity_data['country'])
+                country_code_list.append(univercity_data['alpha_two_code'])
+                
+        for index, A in enumerate (country_name_list): 
+            Country.objects.get_or_create(name=A, code=country_code_list[index])
+
+        for univercity_data in data:
+            country_id = Country.objects.get(name = univercity_data['country'])
+            if University.objects.filter(name=univercity_data['name']):
+                pass
+            else:
+                University.objects.get_or_create(name=univercity_data['name'], webpage=univercity_data['web_pages'][0], country=country_id)
+
+        all_user = User.objects.all()
+        for user in all_user:
+            while user.universitypreference_set.count() <= 20:
+                UniversityPreference.objects.create(user=user, university_id=randrange(1,1000))
+        
+        return Response({'detail': '정보 저장이 완료되었습니다'}, status=status.HTTP_200_OK)
+    
 class SearchView(APIView):
     def get(self, request):
         """
@@ -42,7 +80,6 @@ class RreferenceView(APIView):
         """
         user = request.user
         university = University.objects.get(id=university_id)
-        
         
         getted_obj, created_obj = UniversityPreference.objects.get_or_create(university=university, user=user)
     
