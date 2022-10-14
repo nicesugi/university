@@ -1,3 +1,10 @@
 from django.contrib import admin
+from university.models import (
+    Country, University,
+    UniversityPreference
+)
 
-# Register your models here.
+
+admin.site.register(Country)
+admin.site.register(University)
+admin.site.register(UniversityPreference)
