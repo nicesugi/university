@@ -20,7 +20,6 @@ class Command(BaseCommand):
             User,
             total,
             {
-                'username' : lambda x: Faker().name(),
                 'email' : lambda x: seeder.faker.email(),
                 'nickname' : lambda x: Faker().name(),
             },
