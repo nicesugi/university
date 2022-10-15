@@ -1,5 +1,11 @@
 # university
 
+[1. API](#api) <br>
+[2. ERD](#erd) <br>
+[3. 컨벤션](#컨벤션) <br>
+[4. 문제 해결 과정](#문제-해결-과정) <br>
+[5. 내가 수정한 사항들](#내가-수정한-사항들) <br>
+[6. 추가하고 싶은 기능들](#추가하고-싶은-기능들) <br>
 
 ### API
 <img width="600" alt="스크린샷 2022-10-14 오후 10 21 20" src="https://user-images.githubusercontent.com/104303285/195862324-d2d55c3f-240b-4dab-a542-71d3dd1b8a61.png">
