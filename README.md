@@ -76,7 +76,7 @@ serializer = UniversitySerializer(search_list[start_obj:end_obj], many=True)
 seed_users.py 에 새로운 명령어에 대한 로직 작성<br>
 아래의 명령어를 통해 사용자의 더미데이터 1000개 생성 구현
 ```shell
-python manage.py seed_users --total 1000
+python manage.py see_users --total 1000
 ```
 
 4. 사용자별 선호대학 더미데이터 생성 로직
