@@ -1,11 +1,15 @@
 # university
-오픈 소스 데이터셋을 활용하여 해외정보를 수집하고 사용자들의 대학 선호도를 확인 할 수 있는 API를 구현
+오픈 소스 데이터셋을 활용하여 정보를 수집하고 RESTful API 기능구현 
 
+<img src="https://img.shields.io/badge/Python-3.9.10-3776AB?style=flat-square&logo=Python&logoColor=white"/> <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=Django&logoColor=white"/> <img src="https://img.shields.io/badge/Django REST framework-092E20?style=flat-square&logo=Django REST framework&logoColor=white"/> 
+
+### 목차
 [1. 구현기능](#구현기능) <br>
 [2. API](#api) <br>
 [3. ERD](#erd) <br>
 [4. 컨벤션](#컨벤션) <br>
 
+---
 
 ### 구현기능
 
@@ -104,9 +108,12 @@ all_user = User.objects.all()
 
 </details>
 
+
+---
+
 ### API
 
-<img width="600" alt="스크린샷 2022-10-21 오후 12 19 48" src="https://user-images.githubusercontent.com/104303285/197103729-d67e3e67-66bd-4c24-a068-6008e2801cd4.png">
+<img width="700" alt="스크린샷 2022-10-21 오후 12 19 48" src="https://user-images.githubusercontent.com/104303285/197103729-d67e3e67-66bd-4c24-a068-6008e2801cd4.png">
 
 
 
