@@ -20,15 +20,15 @@
 </summary>
 </br>
     
-    AUTH_PASSWORD_VALIDATORS 적용
+AUTH_PASSWORD_VALIDATORS 적용
     
-    ```
-    class UserSignupSerializer(serializers.ModelSerializer):
-        def validate(self, data):
-            validate_password(data["password"])
-            return data
-    
-    ```
+```python
+class UserSignupSerializer(serializers.ModelSerializer):
+    def validate(self, data):
+        validate_password(data["password"])
+        return data
+
+```
 </details>
 
 <details>
