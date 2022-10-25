@@ -1,7 +1,8 @@
 # university
 오픈 소스 데이터셋을 활용하여 정보를 수집하고 RESTful API 기능구현 
 
-<img src="https://img.shields.io/badge/Python-3.9.10-3776AB?style=flat-square&logo=Python&logoColor=white"/> <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=Django&logoColor=white"/> <img src="https://img.shields.io/badge/Django REST framework-092E20?style=flat-square&logo=Django REST framework&logoColor=white"/> 
+<img src="https://img.shields.io/badge/Python-3.9.10-3776AB?style=flat-square&logo=Python&logoColor=white"/> <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=Django&logoColor=white"/> <img src="https://img.shields.io/badge/Django REST framework-092E20?style=flat-square&logo=Django REST framework&logoColor=white"/> [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
 
 ### 목차
 [1. 구현기능](#구현기능) <br>
@@ -76,7 +77,7 @@ serializer = UniversitySerializer(search_list[start_obj:end_obj], many=True)
 seed_users.py 에 새로운 명령어에 대한 로직 작성<br>
 아래의 명령어를 통해 사용자의 더미데이터 1000개 생성 구현
 ```shell
-python manage.py see_users --total 1000
+python manage.py seed_users --total 1000
 ```
 
 </details>

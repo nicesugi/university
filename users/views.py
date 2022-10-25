@@ -9,5 +9,4 @@ class UserView(APIView):
         user_data_serializer = UserSignupSerializer(data=request.data)
         user_data_serializer.is_valid(raise_exception=True)
         user_data_serializer.save()
-        return Response({'detail': '회원가입을 성공하였습니다'}, 
-                        status=status.HTTP_201_CREATED)
+        return Response({"detail": "회원가입을 성공하였습니다"}, status=status.HTTP_201_CREATED)

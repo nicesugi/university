@@ -1,8 +1,5 @@
 from django.contrib import admin
-from university.models import (
-    Country, University,
-    UniversityPreference
-)
+from university.models import Country, University, UniversityPreference
 
 
 admin.site.register(Country)

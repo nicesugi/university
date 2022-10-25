@@ -7,24 +7,45 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='User',
+            name="User",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('last_login', models.DateTimeField(blank=True, null=True, verbose_name='last login')),
-                ('email', models.EmailField(max_length=50, unique=True, verbose_name='이메일')),
-                ('password', models.CharField(max_length=200, verbose_name='패스워드')),
-                ('nickname', models.CharField(max_length=10, unique=True, verbose_name='닉네임')),
-                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='생성일시')),
-                ('is_active', models.BooleanField(default=True)),
-                ('is_admin', models.BooleanField(default=False)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "last_login",
+                    models.DateTimeField(
+                        blank=True, null=True, verbose_name="last login"
+                    ),
+                ),
+                (
+                    "email",
+                    models.EmailField(max_length=50, unique=True, verbose_name="이메일"),
+                ),
+                ("password", models.CharField(max_length=200, verbose_name="패스워드")),
+                (
+                    "nickname",
+                    models.CharField(max_length=10, unique=True, verbose_name="닉네임"),
+                ),
+                (
+                    "created_at",
+                    models.DateTimeField(auto_now_add=True, verbose_name="생성일시"),
+                ),
+                ("is_active", models.BooleanField(default=True)),
+                ("is_admin", models.BooleanField(default=False)),
             ],
             options={
-                'abstract': False,
+                "abstract": False,
             },
         ),
     ]

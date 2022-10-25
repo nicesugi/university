@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('university', '0001_initial'),
+        ("university", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='universitypreference',
-            name='is_active',
-            field=models.BooleanField(default=True, verbose_name='활성화'),
+            model_name="universitypreference",
+            name="is_active",
+            field=models.BooleanField(default=True, verbose_name="활성화"),
         ),
     ]

@@ -5,4 +5,4 @@ from university.models import University
 class UniversitySerializer(serializers.ModelSerializer):
     class Meta:
         model = University
-        fields = ['id', 'country', 'name', 'webpage']
+        fields = ["id", "country", "name", "webpage"]
