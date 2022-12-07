@@ -5,7 +5,7 @@
 
 
 ### 목차
-[1. 구현기능](#구현기능) <br>
+[1. 구현기능 설명](#구현기능) <br>
 [2. API](#api) <br>
 [3. ERD](#erd) <br>
 [4. 컨벤션](#컨벤션) <br>
@@ -14,7 +14,7 @@
 
 ### 구현기능
 
-<details>
+<details open>
 <summary>
 1. Django 권장 password 규칙을 적용한 사용자 회원가입
 </summary>
@@ -31,7 +31,7 @@ class UserSignupSerializer(serializers.ModelSerializer):
 ```
 </details>
 
-<details>
+<details open>
 <summary>
 2. 사용자 더미데이터 생성 로직
 </summary>
@@ -45,7 +45,7 @@ python manage.py seed_users --total 1000
 
 </details>
 
-<details>
+<details open>
 <summary>
 3. 대학교 검색
 </summary>
@@ -82,7 +82,7 @@ serializer = UniversitySerializer(search_list[start_obj:end_obj], many=True)
 
 </details>
 
-<details>
+<details open>
 <summary>
 4. 사용자별 선호대학 더미데이터 생성 로직 모든 사용자에게 랜덤한 20개의 선호대학교 할당
 </summary>
@@ -99,7 +99,7 @@ all_user = User.objects.all()
 
 </details>
 
-<details>
+<details open>
 <summary>
 5. View를 반복 실행하더라도 오버되는 데이터 생성을 방지
 </summary>
