@@ -1,12 +1,15 @@
-import requests, json
-from django.db.models import Q
+import json
 from random import randrange
+
+import requests
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
+
+from django.db.models import Q
 from university.models import Country, University, UniversityPreference
-from users.models import User
 from university.serializers import UniversitySerializer
+from users.models import User
 
 
 class TaskView(APIView):
@@ -103,8 +106,8 @@ class RreferenceView(APIView):
                     {"detail": "선호 대학은 20개까지만 가능합니다"},
                     status=status.HTTP_400_BAD_REQUEST,
                 )
-        elif getted_obj.is_active == False:
-            getted_obj.is_active == True
+        elif getted_obj.is_active is False:
+            getted_obj.is_active = True
             getted_obj.save()
             return Response(
                 {"detail": "선호 대학으로 등록했습니다"}, status=status.HTTP_201_CREATED

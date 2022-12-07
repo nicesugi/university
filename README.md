@@ -19,9 +19,9 @@
 1. Django 권장 password 규칙을 적용한 사용자 회원가입
 </summary>
 </br>
-    
+
 AUTH_PASSWORD_VALIDATORS 적용
-    
+
 ```python
 class UserSignupSerializer(serializers.ModelSerializer):
     def validate(self, data):
@@ -59,7 +59,7 @@ if search == '':
     return Response ({'detail': '검색어가 비어있습니다'}, status=status.HTTP_404_NOT_FOUND)
 
 university_search = University.objects.filter(
-    Q(name__icontains=search) 
+    Q(name__icontains=search)
     | Q(country__code__icontains=search)
     )
 ```
@@ -132,7 +132,7 @@ all_user = User.objects.all()
     - Variable : Snake
     - Function : Snake
     - Constant : Pascal + Snake
-    
+
 - commit
     - add/ 새로운 프로젝트, 앱, 설정
     - feat/ 기능
